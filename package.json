@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npx tsc",
+    "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Nemhis/ts-types-theory.git"
@@ -18,6 +19,9 @@
   },
   "homepage": "https://github.com/Nemhis/ts-types-theory#readme",
   "devDependencies": {
+    "@rollup/plugin-typescript": "11.0.0",
+    "rollup": "3.12.0",
+    "tslib": "2.5.0",
     "typescript": "^4.9.4"
   }
 }

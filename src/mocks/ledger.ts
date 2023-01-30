@@ -1,4 +1,4 @@
-const ledger = [
+export const ledger = [
     {
         "generalLedgerId": 1,
         "posted": "2021-07-20T01:13:45.507",
@@ -3999,7 +3999,4 @@ const ledger = [
         "amount": 9028.2000,
         "referenceId": "letter"
     }
-];
-
-console.log('hello');
-console.log(ledger);
+]
