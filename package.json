@@ -1,0 +1,23 @@
+{
+  "name": "ts-types-theory",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nemhis/ts-types-theory.git"
+  },
+  "author": "p.nemphis@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nemhis/ts-types-theory/issues"
+  },
+  "homepage": "https://github.com/Nemhis/ts-types-theory#readme",
+  "devDependencies": {
+    "typescript": "^4.9.4"
+  }
+}
