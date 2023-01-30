@@ -4001,5 +4001,27 @@ const ledger = [
     }
 ];
 
-console.log('hello');
-console.log(ledger);
+const AccountDailyReducer = (accountId, ledger) => {
+    return ledger
+        .filter((ledgerEntity) => ledgerEntity.debitAccountId || ledgerEntity.creditAccountId === accountId)
+        .map((entity) => ({
+        date: formatDate(new Date(entity.posted)),
+        debitDayTotal: entity.debitAccountId === accountId ? entity.amount : 0,
+        creditDayTotal: entity.creditAccountId === accountId ? entity.amount : 0,
+    }))
+        .reduce((total, entity) => {
+        const daily = total.find(({ date }) => date === entity.date);
+        if (daily) {
+            daily.debitDayTotal += entity.debitDayTotal;
+            daily.creditDayTotal += entity.creditDayTotal;
+        }
+        else {
+            total.push(entity);
+        }
+        return total;
+    }, []);
+};
+const formatDate = (date) => `${date.getDate()}-${date.getMonth()}-${date.getFullYear()}`;
+
+const total = AccountDailyReducer('311.0001 income', ledger);
+console.log(total);

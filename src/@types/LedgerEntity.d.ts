@@ -1,4 +1,4 @@
-type ReferenceId = 'invoice' | 'promo' | 'order' | 'payment' | 'letter';
+type ReferenceId = 'invoice' | 'promo' | 'order' | 'payment' | 'letter' | 'campaign';
 
 export default interface LedgerEntity {
     generalLedgerId: number;
@@ -6,5 +6,5 @@ export default interface LedgerEntity {
     debitAccountId: string;
     creditAccountId: string;
     amount: number;
-    referenceId: ReferenceId;
+    referenceId: string;
 }
