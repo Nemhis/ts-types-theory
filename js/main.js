@@ -4003,7 +4003,7 @@ const ledger = [
 
 const AccountDailyReducer = (accountId, ledger) => {
     return ledger
-        .filter((ledgerEntity) => ledgerEntity.debitAccountId || ledgerEntity.creditAccountId === accountId)
+        .filter((entity) => entity.debitAccountId || entity.creditAccountId === accountId)
         .map((entity) => ({
         date: formatDate(new Date(entity.posted)),
         debitDayTotal: entity.debitAccountId === accountId ? entity.amount : 0,
