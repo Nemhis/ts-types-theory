@@ -1,7 +1,7 @@
 import AccountDaily from '../@types/AccountDaily';
 type LedgerType = { debitAccountId: string; creditAccountId: string; posted: string; amount: number; };
 
-export const AccountDailyReducer = (accountId: string, ledger: LedgerType[]): AccountDaily[] =>  {
+export const reduceAccountDaily = (accountId: string, ledger: LedgerType[]): AccountDaily[] =>  {
     return ledger
         .filter((entity: LedgerType) => entity.debitAccountId || entity.creditAccountId === accountId)
         .map((entity: LedgerType): AccountDaily => ({
